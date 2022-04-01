@@ -1,0 +1,195 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">   
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/348a0b96fa.js" crossorigin="anonymous"></script>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <!-- Custom JS -->
+    <script type="text/javascript" src="js/accordion.js"></script>
+    <script>
+      //Funktion zum Anzeigen der Inputs im Reihenformat (Nach Tankstellen suche)
+      function showInputrow() {
+          var divShow = document.getElementById("inputAsRow");
+          var divInvis = document.getElementById("inputAsColumn")
+          var accordion = document.getElementById("accordion");
+          var titleText = document.getElementById("titleText");
+          document.getElementById("ortRow").value = document.getElementById("ortColumn").value;
+          divShow.classList.remove("d-none");
+          divShow.classList.add("d-flex");
+          divInvis.classList.remove("d-flex");
+          divInvis.classList.add("d-none");
+          accordion.classList.remove("d-none");
+          accordion.classList.add("d-flex");
+          titleText.classList.add("d-none");
+          
+          createAccordion(document.getElementById("spritartColumn").value)
+      } 
+      //Funktion das beide Inputs die gleichen Werte haben
+      function radiusChange(){
+        var radiusColumn = document.getElementById("radiusColumn");
+        var radiusRow = document.getElementById("radiusRow");
+        radiusRow.value = radiusColumn.value;
+      }
+     //Funktion das beide Inputs die gleichen Werte haben
+      function spritartChange(){
+        var spritartColumn = document.getElementById("spritartColumn");
+        var spritartRow = document.getElementById("spritartRow");
+        spritartRow.value = spritartColumn.value;
+      }
+      //Funktion das beide Inputs die gleichen Werte haben
+      function updateAccordion(){
+        var parent = document.getElementById("accordion")
+        while(parent.firstChild){
+        parent.removeChild(parent.firstChild);
+        }
+        createAccordion(document.getElementById("spritartRow").value);
+      }
+    </script>
+    <link rel="icon" type="image/png" href="/assets/gas_station.png">
+    <title>Tank-o-mator</title>
+  </head>
+  <body>
+    <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        <a class="navbar-brand" href="./index.html"><i class="fas fa-gas-pump highlightblue"></i> Tank-o-mator</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse float-end" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link" href="./referenceSite.html">Verweise</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+      <!-- Title Text-->
+      <div id="titleText" class="container">
+        <div class="container-fluid text-center mt-5 text-primary welcomeText"><h1>Willkommen bei Tank-o-mator!</h1></div>
+        <div class="container-fluid text-center text-light w-75 mt-5 welcomeText">Die Tank-o-mator Website bietet Ihnen die Möglichkeit, einfach und schnell, Spritpreise in Ihrer Nähe anzuzeigen.
+            Durch einen Druck auf den Knopf "Ort" wird Ihr Standort übernommen, alternativ können Sie auch einen gültigen Standort eingeben und von dort aus Suchen. Dabei muss man einen Radius über ein Dropdown-Menü
+            angeben und kann danach noch die gewünschte Spritsorte wählen. Die Website erhält die gesuchten Informationen über sogenannte APIs, diese werden auf der Seite: <a href="referenceSite.html">Verweise</a> genauer erklärt.
+        </div>  
+      </div>
+    
+    <!-- Option Input as Row-->
+    <div class="justify-content-center mt-4 d-none" id="inputAsRow">
+      <div class="w-75 d-flex flex-column flex-lg-row justify-content-around">
+
+        <div class="input-group m-2">
+          <button class="btn btn-outline-secondary labels" type="button" id="ortButtonRow"><i class="fas fa-map-marked-alt"></i> Ort</button>
+            <input type="text" class="form-control" placeholder="" id="ortRow">
+        </div>
+            
+        <div class="input-group m-2">
+          <button class="btn btn-outline-secondary labels" type="button"><i class="fas fa-map-marker-alt"></i> Radius</button>
+          <select class="form-select" id="radiusRow">
+            <option value="1" selected>1 Kilometer</option>  
+            <option value="5">5 Kilometer</option>
+            <option value="10">10 Kilometer</option>
+            <option value="20">20 Kilometer</option>
+            <option value="30">30 Kilometer</option>
+            <option value="50">50 Kilometer</option>
+          </select>
+        </div>
+
+        <div class="input-group m-2">
+          <button class="btn btn-outline-secondary labels" type="button"> <i class="fas fa-burn"></i> Spritart</button>
+          <select class="form-select" id="spritartRow">
+            <option value="Super">Super</option>
+            <option value="E10">E10</option>
+            <option value="Diesel">Diesel</option>
+          </select>
+        </div> 
+        <div class="d-flex m-2 justify-content-end">
+          <button class="btn btn-outline-secondary " type="button" id="spritartButtonRow" onclick=updateAccordion()><i class="fas fa-search-dollar"></i> Suchen</button>
+        </div>       
+         
+        
+     </div>
+    </div>
+
+    <!-- Option Inputs as Column-->
+    <div class="d-flex justify-content-center mt-5" id="inputAsColumn">
+     <div class="input-group w-50">
+        <div class="input-group mt-2">
+            <button class="btn btn-outline-secondary labels" type="button" id="ortButtonColumn"><i class="fas fa-map-marked-alt"></i> Ort</button>
+            <input type="text" class="form-control" placeholder="" id="ortColumn">
+          </div>
+
+          <div class="input-group mt-3">
+            <button class="btn btn-outline-secondary labels" type="button"><i class="fas fa-map-marker-alt"></i> Radius</button>
+          <select class="form-select" id="radiusColumn" name="radiusColumn" onchange="radiusChange()">
+            <option value="1" selected>1 Kilometer</option>  
+            <option value="5">5 Kilometer</option>
+            <option value="10">10 Kilometer</option>
+            <option value="20">20 Kilometer</option>
+            <option value="30">30 Kilometer</option>
+            <option value="50">50 Kilometer</option>
+          </select>
+          </div>
+        
+
+          <div class="input-group mt-3">
+            <button class="btn btn-outline-secondary labels" type="button" id="spritartButtonColumn"> <i class="fas fa-burn"></i> Spritart</button>
+            <select class="form-select" id="spritartColumn" onchange="spritartChange()">
+              <option value="Super">Super</option>
+              <option value="E10">E10</option>
+              <option value="Diesel">Diesel</option>
+            </select>
+          </div>
+
+          <div class="input-group mt-3 d-flex justify-content-end">
+            <button class="btn btn-outline-secondary" type="button" id="searchButtonList" onclick=showInputrow()><i class="fas fa-search-dollar"></i> Suchen</button>
+          </div>
+     </div>
+    </div>
+    <!-- Container der Angezeigt wird wenn keine Tankstelle gefunden-->
+    <div class="container-fluid text-center fs-3 rounded-3 d-none w-75 bg-dark rounded-3 mt-5" id="noGasStation">
+      <p class="text-white-50">Leider konnten wir kein Ergebnis zu Ihrer Suchanfrage finden! <i class="fa-solid fa-face-sad-tear"></i></p> 
+      <p class="text-white-50" id="errorText"></p>
+    </div>
+    <!-- Container der das Laden visualisiert-->
+    <div class="container bg-dark text-white text-center rounded-3 w-25 d-none mt-5" id="loading"><div class="container display-5"><i class="fa-solid fa-sync fa-spin"></i></div></div>
+    <!-- Tankstellen auflisten nach der Suche(dort wird per innerHTML ergänzt) -->
+    <div class="d-none flex-wrap justify-content-center mt-5 mb-5 accordion" id="accordion">
+    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script>  
+      //Enter zum bestätigen der Anfrage
+      var inputColumn = document.getElementById('ortColumn');
+      inputColumn.addEventListener("keyup",function(event){
+        if(event.keyCode === 13){
+          event.preventDefault();
+          document.getElementById('searchButtonList').click();
+        }
+      });
+
+      var inputRow = document.getElementById('ortRow');
+      inputRow.addEventListener("keyup",function(event){
+        if(event.keyCode === 13){
+          event.preventDefault();
+ 
+          document.getElementById('spritartButtonRow').click();
+        }
+      });</script>
+  </body>
+</html>

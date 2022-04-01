@@ -1,0 +1,44 @@
+swagger: "2.0"
+info:
+  description: "An small API to get gasstations around your Area. It uses OpenWeather API and TankerKoenig API to convert your location in gasstations around you."
+  version: "4.2.0"
+  title: "Tank-o-Mator"
+  contact:
+    email: "tankiboy420@tankmail.de"
+
+tags:
+- name: "default"
+  description: "A way to test the functionality of the API."
+- name: "tank-o-mator"
+  description: "All requests to our own API"
+
+paths:
+  /:
+    get:
+      tags:
+      - "default"
+      responses:
+        "200":
+          description: "It works"
+  /api/gasStation:
+    get:
+      tags:
+      - "tank-o-mator"
+      parameters:
+      - name: "location"
+        in: "query"
+        type: "string"
+        description: "The location"
+        required: true
+      - name: "radius"
+        in: "query"
+        type: "string"
+        description: "The radius"
+        required: true
+      responses:
+        "200":
+          description: "Everything is fine"
+        "404":
+          description: "No gas station found"
+        "500":
+          description: "internal Server Error. Explanation in description."

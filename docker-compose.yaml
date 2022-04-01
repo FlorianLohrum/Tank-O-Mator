@@ -1,0 +1,15 @@
+version: '3.9'
+services:
+  api:
+    build: ./BackendAPI
+    image: tankomator_api
+    ports:
+      - "1273:5000"
+
+  webapp:
+    build: ./Frontend
+    image: tankomator_webapp
+    ports:
+      - "1337:80"
+    depends_on:
+      - api

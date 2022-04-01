@@ -1,0 +1,65 @@
+body{
+    font-family: "Poppins";
+    background: url('../assets/bg.svg');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #0c093d;
+}
+.highlightblue{
+    color: #3472b1;
+}
+.nav-link:hover{
+    color:#3472b1 !important;
+}
+.labels{
+    min-width: 120px !important;
+}
+.d-flex{
+    width: 100%;
+}
+.inputrow{
+    display:none !important; 
+}
+.accordion-button:not(.collapsed)::after{
+    filter: brightness(0%) invert();
+}
+.accordion-button.collapsed::after{
+    filter: brightness(0%) invert();
+}
+.accordion-item{
+    border-color:gray;
+}
+.accordion-body.{
+    border: 1px solid;
+    border-radius: 5px;
+    border-color:#3472b1 !important;
+}
+.accordion-button[aria-expanded=true]{
+    border: 2px solid #3472b1;
+}
+.bs-logo{
+    color:#563d7c;
+}
+.firstLetter{
+    float: left;
+    font-family: Georgia;
+    font-size: 50px;
+    line-height: 40px;
+    padding-top: 4px;
+    padding-right: 8px;
+    padding-left: 3px;
+}
+.fa-logo{
+    color: #339af0;
+}
+.bgCard{
+    background-color: rgba(0,0,0,0.5);
+}
+.tk-logo{
+    color:#34495D;
+}
+.ow-logo{
+    color: #EB6E4B;
+}
+@media only screen and (max-width: 1000px) {
+  }

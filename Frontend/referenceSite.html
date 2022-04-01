@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+
+    <!-- Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">   
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/348a0b96fa.js" crossorigin="anonymous"></script>
+
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <link rel="icon" type="image/png" href="/assets/gas_station.png">
+    <title>Verweise</title>
+  </head>
+  <body>
+       <!-- Navbar-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container">
+        <a class="navbar-brand" href="./index.html"><i class="fas fa-gas-pump highlightblue"></i> Tank-o-mator</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse float-end" id="navbarSupportedContent">
+            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+              <li class="nav-item">
+                <a class="nav-link active" href="./referenceSite.html">Verweise</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </nav>
+<!-- Website Erklärung-->
+      <div class="container-fluid text-center mt-5 text-primary"><h1>Verweise</h1></div>
+      <div class="container-fluid text-center text-light w-75 mt-5 mb-5">Die Website enthält verschiedene APIs die verschiedene Informationen liefern. Im folgenden werden diese genauer Erklärt. Ebenso wurde das Design mit dem Framework:
+        Bootstrap 5 bearbeitet. Eine Erklärung hierfür finden Sie ebenfalls im Folgendem.
+      </div>
+
+<!-- Bootstrap-->  
+<div class="container-fluid d-flex w-75 mb-2 border border-dark rounded p-4 bgCard shadow-lg">
+  <div class="container-fluid d-flex w-25 justify-content-center align-items-center"><i class="fa-brands fa-bootstrap bs-logo display-1"></i></div>
+  <div class="container-fluid  text-white"><span class="firstLetter bs-logo">B</span>ootstrap (aktuell Benutzt: Version 5.1) ist ein kostenloses und quelloffenes Frontend-Web-Framework zur Erstellung von Webseiten. Es dient nur der Front-End-Entwicklung und enthält HTML- und CSS-basierte Designvorlagen für Typografie, Formulare, Schaltflächen und Navigation sowie optionale JavaScript-Erweiterungen. Das Ergebnis ist ein einheitliches Erscheinungsbild in Webbrowsern. Darüber hinaus können Entwickler die in Bootstrap definierten CSS-Klassen nutzen, um das Erscheinungsbild ihrer Inhalte weiter anzupassen.
+    Durch die JavaScript-Module ist es möglich, Nutzerinteraktionen einzubinden, z.B. Dialogboxen, Bilder-Slideshows und Tabs. Bootstrap bietet zudem alle Voraussetzungen für responsives Webdesign, so dass Webseiten auf allen Geräten (Desktop, Smartphones und Tablets) optimal dargestellt werden.</div>
+</div>
+
+<!-- Font Awesome--> 
+<div class="container-fluid d-flex w-75 mb-2 border border-dark rounded p-4 bgCard">
+  <div class="container-fluid  text-white"><span class="firstLetter fa-logo">F</span>ont Awesome (aktuell Benutzt: Version 6.x.x) ist eine Schriftartbasierte Icon-Sammlung. Das heißt die Icons können auch wie eine normale Schriftart, mittels CSS, z.B. eingefärbt und frei skaliert werden.
+    Die Icons ermöglicht eine angenehme Hervorhebung von Elementen.
+    Sie bewirken einen leichteren Lesefluss und eine bessere Orientierung auf der Seite. Die Icons können auch gut benutzt werden, um ganze Wörter zu ersetzen und damit Platz zu sparen, was sich vorallem auf mobilen Geräten positiv auswirkt. Ein Icon wird mittels eines HTML Snippets eingefügt und kann über CSS frei bearbeitet werden. Ebenso bietet sie eine gute alternative zu Icons die sonst als Bild eingefügt würden und kann somit auch die Ladegeschwindigkeit verbessern.
+    Die Schrift wird stets erweitert und bietet so immer wieder neue icons die genutzt werden können. 
+  </div>
+    <div class="container-fluid d-flex w-25 justify-content-center align-items-center"><i class="fa-solid fa-font-awesome display-1 fa-logo"></i></div>
+  </div>
+
+<!-- Tankerkoenig API -->
+<div class="container-fluid d-flex w-75 mb-2 border border-dark rounded p-4 bgCard shadow-lg">
+  <div class="container-fluid d-flex w-25 justify-content-center align-items-center"><i class="fa-solid fa-gas-pump tk-logo display-1"></i></div>
+  <div class="container-fluid  text-white"><span class="firstLetter tk-logo">T</span>ankerkönig ist eine Echzeit-Benzinpreis-API. Mit dieser API ist es möglich die Spritpreise von Tankstellen in der Nähe herrauszufinden.Hier gibt es den einfachen Zugang zu den aktuellen Spritpreisen aller an die Markttransparenzstelle für Kraftstoffe (MTS-K) meldenden Tankstellen Deutschlands.
+
+    Alle 14000+ Tankstellen im Bundesgebiet müssen die Preise für Super E5, Super E10 und Diesel zeitnah an diese Abteilung des Bundeskartellamtes melden. Der Zugang zu diesen Daten ist über diese Behörde ausschliesslich lizenzierten Spritpreis-Informationsdiensten möglich.
+    
+    Damit auch andere Anwender, sowie Entwickler von Apps, Websites und anderem diese Daten nutzen können gibt es die freie API von Tankerkönig.
+    Damit verringert sich der Aufwand für Website-Betreiber und App-Entwickler zur Suche und Anzeige aktueller Spritpreise dramatisch.
+    
+    Tankerkönig.de hat sich entschlossen, sein API freizugeben, um anderen die gesammelten Erfahrungen im Sinne des Open-Data-Gedankens zur Verfügung zu stellen. Als einzige technische Einschränkung muß ein API-Key benutzt werden, um Zugriffe zuordnen und Missbrauch verhindern zu können. Die Bedingungen der MTS-K müssen ebenfalls eingehalten werden. 
+    Die freie API wird aus Kosten- und Ressourcengründen auf best-effort-Basis betrieben, eine Dienstgüte kann für die freie Version deshalb nicht garantiert werden.</div>
+</div>
+
+<!-- OpenWeather API-->
+<div class="container-fluid d-flex w-75 mb-2 border border-dark rounded p-4 bgCard">
+  <div class="container-fluid  text-white "><span class="firstLetter ow-logo">O</span>penWeatherMap ist ein Onlinedienst von OpenWeather Ltd, der globale Wetterdaten über API bereitstellt, einschließlich aktueller Wetterdaten, Vorhersagen, Nowcasts und historischer Wetterdaten für jeden geografischen Standort. Das Unternehmen bietet eine minutengenaue hyperlokale Niederschlagsvorhersage für jeden Ort. Das Convolutional Machine Learning-Modell wird verwendet, um meteorologische Rundfunkdienste und Daten von Flughafenwetterstationen, Bodenradarstationen, Wettersatelliten, Fernerkundungssatelliten, METAR und automatisierten Wetterstationen zu nutzen.
+    Das Unternehmen hat mehr als 2 Millionen Kunden, die von unabhängigen Entwicklern bis hin zu Fortune-500-Unternehmen reichen.  
+    Die Vielfalt der von OpenWeatherMap bereitgestellten Wetter-APIs hat bei den Softwareentwicklern große Popularität gefunden, was zu einer wachsenden Vielzahl von Repositories auf GitHub führte. Die APIs unterstützen mehrere Sprachen, Maßeinheiten und branchenübliche Datenformate wie JSON und XML.
+    Im Jahr 2021 startete OpenWeatherMap eine Reihe von Initiativen zur Unterstützung von Studenten, Forschern und Entwicklern auf der ganzen Welt.
+    
+  </div>
+    <div class="container-fluid d-flex w-25 justify-content-center align-items-center"><i class="fa-solid fa-sun ow-logo display-1"></i></div>
+  </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+  </body>
+</html>
